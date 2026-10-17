@@ -1,81 +1,34 @@
-# LearnHub — LMS Frontend
 
-A beginner-friendly frontend-only Learning Management System demo built with HTML, CSS, and vanilla JavaScript.
+# LearnHub - Learning Management System
 
-## User story
+A beginner-friendly frontend Learning Management System built using HTML, CSS, and JavaScript.
 
-As a student, I want to view available courses and mark a course as completed so that I can track my learning progress.
+## User Story
+
+As a student, I want to view available courses and mark courses as completed so that I can track my learning progress.
 
 ## Features
 
-- Responsive course dashboard
-- Three sample courses
-- Search courses by title, description, or category
-- Mark courses as completed
-- Completion count and progress percentage
-- Progress saved in browser local storage
-- Node.js built-in automated tests
-- GitHub Actions CI workflow
-- Docker container served by Nginx
+- View available courses.
+- Search courses by title or category.
+- Mark a course as completed.
+- View completed course count.
+- Track overall learning progress.
+- Responsive user interface.
+- Save progress using browser local storage.
 
-## Run locally
+## Technologies Used
 
-Open `index.html` in your browser. No backend or package installation is required to use the frontend.
+- HTML5
+- CSS3
+- JavaScript
+- Git and GitHub
+- GitHub Actions
+- Node.js testing
+- Docker
+- Nginx
 
-## Run tests
-
-Install Node.js 22 or newer, then run:
-
-```bash
-npm test
-```
-
-## Run with Docker
-
-Build:
-
-```bash
-docker build -t learnhub-lms:1.0 .
-```
-
-Run:
-
-```bash
-docker run --name learnhub-lms -p 8080:80 learnhub-lms:1.0
-```
-
-Open http://localhost:8080.
-
-Stop and remove:
-
-```bash
-docker stop learnhub-lms
-docker rm learnhub-lms
-```
-
-## Git branch workflow
-
-```bash
-git init
-git add .
-git commit -m "chore: initialize LearnHub LMS"
-git branch -M main
-git switch -c feature/course-completion
-git add .
-git commit -m "feat: add course completion tracking"
-```
-
-Create an empty GitHub repository, then connect it:
-
-```bash
-git remote add origin https://github.com/YOUR_USERNAME/lms-frontend.git
-git push -u origin main
-git push -u origin feature/course-completion
-```
-
-Open a pull request from `feature/course-completion` into `main`. GitHub Actions runs the tests automatically on pushes to `main` or `feature/**`, and on pull requests targeting `main`.
-
-## Project structure
+## Project Structure
 
 ```text
 lms-frontend/
@@ -94,6 +47,66 @@ lms-frontend/
 └── README.md
 ```
 
-## Notes
+## Run the Application
 
-This is a frontend demonstration. Course data is hard-coded, and completion status is stored locally in the current browser. There is no authentication, server, or shared database.
+Open `index.html` in your browser.
+
+No backend server is required.
+
+## Run Automated Tests
+
+Install Node.js, open the project terminal, and run:
+
+```bash
+npm test
+```
+
+## Docker Setup
+
+Build the Docker image:
+
+```bash
+docker build -t learnhub-lms:1.0 .
+```
+
+Start the container:
+
+```bash
+docker run --name learnhub-lms -p 8080:80 learnhub-lms:1.0
+```
+
+Open http://localhost:8080 in your browser.
+
+## Git Branch Workflow
+
+The project uses a feature branch for development.
+
+```bash
+git switch main
+git switch -c feature/course-completion
+```
+
+After making changes:
+
+```bash
+git add .
+git commit -m "feat: document LMS course completion"
+git push -u origin feature/course-completion
+```
+
+## Continuous Integration
+
+GitHub Actions automatically runs the Node.js tests when code is pushed to `main` or a `feature/**` branch and when a pull request targets `main`.
+
+## Pull Request
+
+Create a pull request from:
+
+- Source branch: `feature/course-completion`
+- Target branch: `main`
+
+Review the automated test results before merging.
+
+## Limitations
+
+This is a frontend demonstration. Course information is stored in JavaScript, and course progress is saved in the browser. There is no backend, authentication, or shared database.
