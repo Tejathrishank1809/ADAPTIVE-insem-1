@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LearnHub - a simple learning management system demo">
+  <title>LearnHub | Learning Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="LearnHub home">
+      <span class="brand-mark">L</span>
+      <span>LearnHub</span>
+    </a>
+    <span class="header-label">STUDENT LEARNING SPACE</span>
+  </header>
+
+  <main class="page-shell">
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">YOUR LEARNING JOURNEY</p>
+        <h1>Learn something <span>new today.</span></h1>
+        <p class="welcome-copy">Explore your courses, build new skills, and keep track of your progress.</p>
+      </div>
+      <div class="welcome-icon" aria-hidden="true">✦</div>
+    </section>
+
+    <section class="stats" aria-label="Learning summary">
+      <article class="stat-card">
+        <span class="stat-label">AVAILABLE COURSES</span>
+        <strong id="available-count">3</strong>
+        <span class="stat-note">Ready to explore</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">COMPLETED</span>
+        <strong id="completed-count">0</strong>
+        <span class="stat-note">Courses finished</span>
+      </article>
+      <article class="stat-card progress-stat">
+        <span class="stat-label">OVERALL PROGRESS</span>
+        <strong id="progress-percent">0%</strong>
+        <div class="progress-track" role="progressbar" aria-label="Overall course completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar">
+          <span id="progress-fill"></span>
+        </div>
+      </article>
+    </section>
+
+    <section class="courses-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR CLASSROOM</p>
+          <h2>Available courses</h2>
+        </div>
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="course-search" type="search" placeholder="Search courses..." aria-label="Search courses">
+        </label>
+      </div>
+      <div id="course-list" class="course-grid" aria-live="polite"></div>
+      <p class="footnote">Demo application · Course progress is stored in this browser only.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 LearnHub</span>
+    <span>Learn at your own pace.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
